@@ -7,5 +7,5 @@ export const environment = {
     storageBucket: 'taskmanagerfinal-2e9cf.appspot.com',
     messagingSenderId: '688605794412',
     appId: '1:688605794412:web:cf20fb5fb255af1b770849',
-  }
+  },
 };
