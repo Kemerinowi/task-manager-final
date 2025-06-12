@@ -1,0 +1,29 @@
+<div class="app-window">
+  <form (ngSubmit)="register()">
+    <h2>Kayıt Ol</h2>
+
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      required
+      placeholder="E-posta"
+    />
+
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      required
+      placeholder="Şifre"
+    />
+
+    <button type="submit">Kayıt Ol</button>
+
+    <p *ngIf="error" class="error-text">{{ error }}</p>
+
+    <p class="login-text">
+      Zaten hesabınız var mı? <a routerLink="/login">Giriş Yap</a>
+    </p>
+  </form>
+</div>

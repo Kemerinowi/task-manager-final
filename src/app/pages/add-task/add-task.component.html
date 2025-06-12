@@ -1,0 +1,29 @@
+<div class="app-window">
+  <form (ngSubmit)="addTask()">
+    <h2>Yeni Görev Ekle</h2>
+
+    <input
+      type="text"
+      [(ngModel)]="title"
+      name="title"
+      placeholder="Görev başlığı"
+      required
+    />
+
+    <textarea
+      [(ngModel)]="description"
+      name="description"
+      placeholder="Açıklama"
+      rows="3"
+      required
+    ></textarea>
+
+    <select [(ngModel)]="category" name="category">
+      <option value="genel">Genel</option>
+      <option value="özel">Özel</option>
+      <option value="iş">İş</option>
+    </select>
+
+    <button type="submit">Görev Ekle</button>
+  </form>
+</div>

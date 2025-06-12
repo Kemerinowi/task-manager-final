@@ -1,0 +1,51 @@
+/* Lav lambası arka plan */
+.lava-background {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at center, #ff00cc, #3333ff);
+  animation: lavaBackground 20s ease-in-out infinite;
+  transition: background 1s ease;
+  overflow-x: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar sabit olduğu için içerik aşağıdan başlar */
+.page-content {
+  margin-top: 90px;
+  padding: 30px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Cam efektli pencere kutusu */
+.app-window {
+  width: 100%;
+  max-width: 960px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Lava animasyonu */
+@keyframes lavaBackground {
+  0% {
+    background: radial-gradient(circle at center, #ff00cc, #3333ff);
+  }
+  25% {
+    background: radial-gradient(circle at top left, #ff8800, #6600ff);
+  }
+  50% {
+    background: radial-gradient(circle at bottom right, #33ffcc, #9933ff);
+  }
+  75% {
+    background: radial-gradient(circle at center, #00ccff, #ff33cc);
+  }
+  100% {
+    background: radial-gradient(circle at center, #ff00cc, #3333ff);
+  }
+}

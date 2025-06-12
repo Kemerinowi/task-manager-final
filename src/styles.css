@@ -1,1 +1,297 @@
-/* You can add global styles to this file, and also import other style files */
+/* === GENEL GÖRÜNÜM === */
+:root {
+  --primary-color: #4ecdc4;
+  --secondary-color: #ff6b6b;
+  --text-color: #ffffff;
+  --background-color: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --container-width: 1200px;
+  --container-padding: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at center, #ff00cc, #3333ff);
+  transition: background 1s ease;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* === FARE HAREKETİYLE RENK DEĞİŞEN ARKA PLAN === */
+.lava-background {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at center, #ff00cc, #3333ff);
+  transition: background 1s ease;
+  overflow-x: hidden;
+}
+
+/* === NAVBAR YÜKSEKLİĞİ === */
+.page-content {
+  margin-top: 90px;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* === CAM GÖRÜNÜMLÜ KUTU === */
+.app-window {
+  background: var(--background-color);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px var(--shadow-color);
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+/* === FORM GİRİŞLERİ === */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--background-color);
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  outline: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.2);
+}
+
+select {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+select option {
+  background-color: #2c3e50;
+  color: var(--text-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* === BUTONLAR === */
+button {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* === METİNLER === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+/* === LİNKLER === */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* === GÖREV LİSTESİ === */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* === RESPONSIVE TASARIM === */
+@media (max-width: 1200px) {
+  :root {
+    --container-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --container-width: 720px;
+  }
+
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-width: 540px;
+    --container-padding: 1.5rem;
+  }
+
+  html {
+    font-size: 14px;
+  }
+
+  .app-window {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --container-padding: 1rem;
+  }
+
+  .page-content {
+    padding: 1rem;
+  }
+
+  .app-window {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* === ANİMASYONLAR === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease forwards;
+}
