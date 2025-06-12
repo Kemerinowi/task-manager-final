@@ -1,27 +1,66 @@
-# TaskManager
+# Task Manager Angular Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+Bu proje, Angular ve Firebase kullanılarak geliştirilmiş bir görev yönetim uygulamasıdır.
 
-## Development server
+## Özellikler
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Kullanıcı kaydı ve girişi
+- Görev ekleme, düzenleme ve silme
+- Görevleri kategorilere ayırma
+- Görev durumlarını takip etme
+- Responsive tasarım
+- İletişim formu
+- Firebase Authentication ve Firestore entegrasyonu
 
-## Code scaffolding
+## Teknolojiler
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 17
+- Firebase
+- TypeScript
+- HTML5
+- CSS3
+- Bootstrap
 
-## Build
+## Kurulum
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Projeyi klonlayın:
 
-## Running unit tests
+```bash
+git clone https://github.com/Kemerinowi/task-manager-final.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Proje dizinine gidin:
 
-## Running end-to-end tests
+```bash
+cd task-manager-final
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Bağımlılıkları yükleyin:
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Uygulamayı başlatın:
+
+```bash
+ng serve
+```
+
+5. Tarayıcınızda `http://localhost:4200` adresine gidin.
+
+## Firebase Kurulumu
+
+1. Firebase Console'da yeni bir proje oluşturun
+2. Authentication'ı etkinleştirin
+3. Firestore Database'i oluşturun
+4. `src/environments/environment.ts` dosyasını kendi Firebase konfigürasyonunuzla güncelleyin
+
+## Deployment
+
+Proje Firebase Hosting üzerinde deploy edilmiştir:
+https://taskmanagerfinal-2e9cf.web.app
+
+## Geliştirici
+
+Kerem Davut Çetin
