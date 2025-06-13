@@ -9,7 +9,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
+  filteredTasks: Task[] = [];
   isLoading = true;
+  selectedCategory: string = 'all';
+  categories: string[] = ['all', 'genel', 'özel', 'iş'];
 
   constructor(
     private taskService: TaskService,
@@ -21,9 +24,25 @@ export class TaskListComponent implements OnInit {
     if (user) {
       this.taskService.getUserTasks(user.uid).subscribe((tasks) => {
         this.tasks = tasks;
+        this.filterTasks();
         this.isLoading = false;
       });
     }
+  }
+
+  filterTasks() {
+    if (this.selectedCategory === 'all') {
+      this.filteredTasks = this.tasks;
+    } else {
+      this.filteredTasks = this.tasks.filter(
+        (task) => task.category === this.selectedCategory
+      );
+    }
+  }
+
+  onCategoryChange(category: string) {
+    this.selectedCategory = category;
+    this.filterTasks();
   }
 
   toggleCompleted(task: Task) {

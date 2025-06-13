@@ -1,26 +1,40 @@
 <div class="app-window">
   <h2>Görev Listesi</h2>
 
+  <div class="category-filters">
+    <button
+      *ngFor="let category of categories"
+      [class.active]="selectedCategory === category"
+      (click)="onCategoryChange(category)"
+      class="category-btn"
+    >
+      {{ category === "all" ? "Tümü" : category }}
+    </button>
+  </div>
+
   <a routerLink="/add-task" class="add-link">+ Yeni Görev Ekle</a>
 
   <div *ngIf="isLoading" class="loading-text">Yükleniyor...</div>
-  <div *ngIf="!isLoading && tasks.length === 0" class="no-task">
+  <div *ngIf="!isLoading && filteredTasks.length === 0" class="no-task">
     Henüz görev yok.
   </div>
 
-  <ul>
-    <li *ngFor="let task of tasks">
+  <div class="task-grid">
+    <div *ngFor="let task of filteredTasks" class="task-card">
       <div class="task-header">
-        <input
-          type="checkbox"
-          [checked]="task.completed"
-          (change)="toggleCompleted(task)"
-        />
-        <strong>{{ task.title }}</strong> -
+        <div class="checkbox-wrapper">
+          <input
+            type="checkbox"
+            [checked]="task.completed"
+            (change)="toggleCompleted(task)"
+            class="custom-checkbox"
+          />
+        </div>
+        <strong>{{ task.title }}</strong>
         <span class="category">{{ task.category }}</span>
       </div>
       <p>{{ task.description }}</p>
-      <button (click)="deleteTask(task.id!)">Sil</button>
-    </li>
-  </ul>
+      <button (click)="deleteTask(task.id!)" class="delete-btn">Sil</button>
+    </div>
+  </div>
 </div>
